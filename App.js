@@ -1,11 +1,14 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
+import Home from './screens/Home';
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <SafeAreaView className="flex-1">
+      {/* <StatusBar backgroundColor="transparent" /> */}
+      <ScrollView>
+        <Home />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

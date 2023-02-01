@@ -1,0 +1,31 @@
+diff --git a/node_modules/react-native/index.js b/node_modules/react-native/index.js
+index f556fa3..838a9d3 100644
+--- a/node_modules/react-native/index.js
++++ b/node_modules/react-native/index.js
+@@ -103,6 +103,26 @@ const invariant = require('invariant');
+ const warnOnce = require('./Libraries/Utilities/warnOnce');
+ 
+ module.exports = {
++  // Deprecated Prop Types
++get ColorPropType(): $FlowFixMe {
++  console.warn('');
++  return require('deprecated-react-native-prop-types').ColorPropType;
++},
++
++get EdgeInsetsPropType(): $FlowFixMe {
++  console.warn('');
++  return require('deprecated-react-native-prop-types').EdgeInsetsPropType;
++},
++
++get PointPropType(): $FlowFixMe {
++  console.warn('');
++  return require('deprecated-react-native-prop-types').PointPropType;
++},
++
++get ViewPropTypes(): $FlowFixMe {
++  console.warn('');
++  return require('deprecated-react-native-prop-types').ViewPropTypes;
++},
+   // Components
+   get AccessibilityInfo(): AccessibilityInfo {
+     return require('./Libraries/Components/AccessibilityInfo/AccessibilityInfo')
