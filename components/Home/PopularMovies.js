@@ -16,13 +16,27 @@ const PopularMovies = () => {
       });
   }, []);
   return (
-    <View className="flex-1 mt-4 ml-4">
-      <List
-        title={'Popular Movies'}
-        content={popularMoviesData}
-        error={error}
-      />
-    </View>
+    <>
+      {!error || popularMoviesData ? (
+        <View className="flex-1 mt-4 ml-4">
+          <List
+            title={'Popular Movies'}
+            content={popularMoviesData}
+            error={error}
+          />
+        </View>
+      ) : (
+        <>
+          <View
+            className="items-center justify-center border-2 border-gray-500"
+            style={{height: dimensionHeight.height / 1.9}}>
+            <Text className="text-2xl text-red-600 font-bold">
+              Server is not responding
+            </Text>
+          </View>
+        </>
+      )}
+    </>
   );
 };
 

@@ -26,7 +26,7 @@ const HeroSlider = () => {
   }, []);
   return (
     <View className="flex-1 justify-center items-center">
-      {!error ? (
+      {!error || movieImage? (
         <>
           <SliderBox
             images={movieImage}

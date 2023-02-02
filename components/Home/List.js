@@ -1,6 +1,12 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.array,
+};
 
 const List = ({title, content, error}) => {
   return (
@@ -19,11 +25,12 @@ const List = ({title, content, error}) => {
           </>
         ) : (
           <>
-          <Text>Server not responding</Text></>
+            <Text>Server not responding</Text>
+          </>
         )}
       </View>
     </View>
   );
 };
-
+List.propTypes = propTypes;
 export default List;
